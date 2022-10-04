@@ -22,6 +22,9 @@ jobs:
             sudo systemctl restart docker
             sudo systemctl status docker
             sudo docker login -u admin -p nexus ec2-44-192-85-226.compute-1.amazonaws.com:8086
+            sudo docker build -t ec2-44-192-85-226.compute-1.amazonaws.com:8086/cz-springboot-welcome:latest .
+            sudo docker images
+            sudo docker push ec2-44-192-85-226.compute-1.amazonaws.com:8086/cz-springboot-welcome:latest
 #    - name: Analyse with sonarcloud
 #      uses: sonarsource/sonarcloud-github-action@v1.3
 #      env:
