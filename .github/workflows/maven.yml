@@ -18,11 +18,14 @@ jobs:
     - name: docker login
       run: |
             ls -la /etc/docker/
-            sudo touch /etc/docker/daemon.json
+            sudo su -
+            touch /etc/docker/daemon.json
             echo "{
                     "insecure-registries": [ "ec2-44-192-85-226.compute-1.amazonaws.com:8086" ]
                     }" > /etc/docker/daemon.json
-            sudo docker login -u admin -p nexus https://nexusrepo.cloudzenix.online
+            sudo systemctl restart docker
+            sudo systemctl status docker
+            sudo docker login -u admin -p nexus ec2-44-192-85-226.compute-1.amazonaws.com:8086
 #    - name: Analyse with sonarcloud
 #      uses: sonarsource/sonarcloud-github-action@v1.3
 #      env:
