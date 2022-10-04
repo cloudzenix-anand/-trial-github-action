@@ -19,7 +19,7 @@ jobs:
       run: |
             ls -la /etc/docker/
             sudo su -
-            touch /etc/docker/daemon.json
+            
             echo "{
                     "insecure-registries": [ "ec2-44-192-85-226.compute-1.amazonaws.com:8086" ]
                     }" > /etc/docker/daemon.json
