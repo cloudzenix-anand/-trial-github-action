@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v2
     - name: docker login
       run: |
-            sudo docker login -u admin -p nexus ec2-44-192-120-3.compute-1.amazonaws.com:8086
+            sudo docker login -u admin -p nexus https://nexusrepo.cloudzenix.online
 #    - name: Analyse with sonarcloud
 #      uses: sonarsource/sonarcloud-github-action@v1.3
 #      env:
